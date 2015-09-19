@@ -1,8 +1,8 @@
 {
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Theme - Brogrammer/brogrammer.tmTheme",
-	"draw_indent_guides": false,
+	"color_scheme": "Packages/Seti_UI/Scheme/Seti_monokai.tmTheme",
+	"draw_indent_guides": true,
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
@@ -17,8 +17,8 @@
 		"tmp",
 		"node_modules"
 	],
-	"font_face": "Hermit",
-	"font_size": 13,
+	"font_face": "Source Code Pro",
+	"font_size": 15,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -30,9 +30,9 @@
 	"old_theme": "Tech49.sublime-theme",
 	"save_on_focus_lost": false,
 	"side_bar_width": 220,
-	"tab_size": 2,
-	"theme": "Hero Dark.sublime-theme",
-	"translate_tabs_to_spaces": true,
+	"tab_size": 4,
+	"theme": "Seti.sublime-theme",
+	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true
+	"word_wrap": false
 }

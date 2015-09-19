@@ -2,7 +2,7 @@
 
 # A simple script for setting up OSX dev environment.
 
-dev="$HOME/Developer"
+dev="$HOME/Development"
 pushd .
 mkdir -p $dev
 cd $dev
@@ -31,7 +31,7 @@ if [[ `uname` == 'Darwin' ]]; then
     echo 'Installing Homebrew...'
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       brew update
-      brew install htop mysql nginx node ruby
+      brew install htop nginx
   fi
 
   echo 'Tweaking OS X...'
@@ -41,8 +41,12 @@ if [[ `uname` == 'Darwin' ]]; then
   echo 'Installing Quick Look plugins...'
     brew tap phinze/homebrew-cask
     brew install caskroom/cask/brew-cask
-    brew cask install suspicious-package quicklook-json qlmarkdown qlstephen qlcolorcode
+    brew cask install suspicious-package quicklook-json qlmarkdown qlstephen qlcolorcode google-chrome
 fi
+
+echo 'Installing nvm...'
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash
+  nvm install stable
 
 echo 'Symlinking config files...'
   source 'bin/symlink-dotfiles.sh'

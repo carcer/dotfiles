@@ -1,9 +1,9 @@
 [user]
-	name = Paul Miller
-	email = paul@paulmillr.com
+	name = Chris Canal
+	email = dhtmlgod@gmail.com
 
 [github]
-  user = paulmillr
+  user = carcer
 
 [alias]
   br = branch
@@ -74,4 +74,4 @@
 [init]
 	templatedir = ~/.git_template
 [ghi]
-	token = !security find-internet-password -a paulmillr -s github.com -l 'ghi token' -w
+	token = !security find-internet-password -a carcer -s github.com -l 'ghi token' -w
