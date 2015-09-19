@@ -35,7 +35,7 @@ if [[ `uname` == 'Darwin' ]]; then
   fi
 
   echo 'Tweaking OS X...'
-    source 'etc/osx.sh'
+    source './etc/osx.sh'
 
   # http://github.com/sindresorhus/quick-look-plugins
   echo 'Installing Quick Look plugins...'
@@ -49,7 +49,7 @@ echo 'Installing nvm...'
   nvm install stable
 
 echo 'Symlinking config files...'
-  source 'bin/symlink-dotfiles.sh'
+  source 'symlink-dotfiles.sh'
 
 echo 'Applying sublime config...'
   st=$(pwd)/sublime/packages
