@@ -148,6 +148,8 @@
 	</data>
 	<key>BackgroundSettingsForInactiveWindows</key>
 	<true/>
+	<key>BlinkText</key>
+	<true/>
 	<key>CursorBlink</key>
 	<false/>
 	<key>CursorColor</key>
@@ -164,13 +166,15 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AqAAAAAAAAEBCAAoADXxAVU291cmNlQ29kZVByby1SZWd1bGFy0hMUFRZaJGNs
+	YXNzI0AsAAAAAAAAEBCAAoADXxAVU291cmNlQ29kZVByby1SZWd1bGFy0hMUFRZaJGNs
 	YXNzbmFtZVgkY2xhc3Nlc1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2
 	ZXLRGhtUcm9vdIABCBEaIy0yNzxCS1JbYmlydHZ4kJWgqbCzvM7R1gAAAAAAAAEBAAAA
 	AAAAABwAAAAAAAAAAAAAAAAAAADY
 	</data>
 	<key>FontAntialias</key>
 	<true/>
+	<key>FontHeightSpacing</key>
+	<real>1.0749432963709677</real>
 	<key>FontWidthSpacing</key>
 	<real>0.99596774193548387</real>
 	<key>Linewrap</key>
@@ -190,17 +194,17 @@
 	<key>ShouldLimitScrollback</key>
 	<integer>1</integer>
 	<key>ShowActiveProcessInTitle</key>
-	<false/>
+	<true/>
 	<key>ShowCommandKeyInTitle</key>
 	<true/>
 	<key>ShowDimensionsInTitle</key>
 	<false/>
 	<key>ShowShellCommandInTitle</key>
-	<false/>
+	<true/>
 	<key>ShowTTYNameInTitle</key>
-	<false/>
+	<true/>
 	<key>ShowWindowSettingsNameInTitle</key>
-	<false/>
+	<true/>
 	<key>TerminalType</key>
 	<string>xterm-256color</string>
 	<key>TextBoldColor</key>
@@ -230,7 +234,7 @@
 	<key>rowCount</key>
 	<integer>30</integer>
 	<key>shellExitAction</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>type</key>
 	<string>Window Settings</string>
 </dict>

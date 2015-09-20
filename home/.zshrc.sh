@@ -5,12 +5,12 @@
 curr="$pm/dotfiles"
 
 # Load main files.
-echo "Load start\t"
+#echo "Load start\t"
 source "$curr/terminal/startup.sh"
-echo "$curr/terminal/startup.sh"
+#echo "$curr/terminal/startup.sh"
 source "$curr/terminal/completion.sh"
 source "$curr/terminal/highlight.sh"
-echo "Load end\t"
+#echo "Load end\t"
 
 autoload -U colors && colors
 
@@ -392,3 +392,5 @@ function preview() {
 
 export NVM_DIR="/Users/chriscanal/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+nvm use stable
