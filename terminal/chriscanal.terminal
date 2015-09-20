@@ -196,15 +196,15 @@
 	<key>ShowActiveProcessInTitle</key>
 	<true/>
 	<key>ShowCommandKeyInTitle</key>
-	<true/>
+	<false/>
 	<key>ShowDimensionsInTitle</key>
 	<false/>
 	<key>ShowShellCommandInTitle</key>
 	<true/>
 	<key>ShowTTYNameInTitle</key>
-	<true/>
+	<false/>
 	<key>ShowWindowSettingsNameInTitle</key>
-	<true/>
+	<false/>
 	<key>TerminalType</key>
 	<string>xterm-256color</string>
 	<key>TextBoldColor</key>
