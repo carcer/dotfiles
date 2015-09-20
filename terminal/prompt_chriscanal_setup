@@ -29,7 +29,7 @@ function get-vcs-info {
     vcs_info=''
   else
     st=`git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo ' ✘'`
-    vcs_info=" %F{blue}%F{magenta}${ref}${st}%f"
+    vcs_info=" %F{blue}%F{red}${ref}${st}%f"
   fi
 }
 
