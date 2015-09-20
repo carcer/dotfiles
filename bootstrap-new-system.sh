@@ -33,6 +33,7 @@ if [[ `uname` == 'Darwin' ]]; then
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       brew update
       brew install htop nginx jsawk trash
+      brew install watchman
   fi
 
   echo 'Tweaking OS X...'
