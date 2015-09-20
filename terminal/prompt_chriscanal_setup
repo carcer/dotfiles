@@ -10,6 +10,7 @@
 # Author: Paul Miller (paulmillr.com)
 
 vcs_info=''
+nvm_info=''
 
 function prompt_chriscanal_precmd {
   setopt LOCAL_OPTIONS
@@ -29,7 +30,31 @@ function get-vcs-info {
     vcs_info=''
   else
     st=`git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo ' ✘'`
-    vcs_info=" %F{blue}%F{red}${ref}${st}%f"
+    vcs_info=" %F{blue}%F{magenta}${ref}%F{red}${st}%f"
+  fi
+}
+
+function nvm_prompt_info() {
+  [ -f "$HOME/.nvm/nvm.sh" ] || return
+  local nvm_prompt
+  nvm_prompt=$(node -v 2>/dev/null)
+  [[ "${nvm_prompt}x" == "x" ]] && return
+  nvm_prompt=${nvm_prompt:1}
+  echo "${ZSH_THEME_NVM_PROMPT_PREFIX}${nvm_prompt}${ZSH_THEME_NVM_PROMPT_SUFFIX}"
+}
+
+function get-nvm-info {
+  nvm_info=''
+
+  if [ ! -f package.json ]; then
+    return
+  else
+    [ -f "$HOME/.nvm/nvm.sh" ] || return
+    local nvm_prompt
+    nvm_prompt=$(node -v 2>/dev/null)
+    [[ "${nvm_prompt}x" == "x" ]] && return
+    nvm_prompt=${nvm_prompt:1}
+    nvm_info=" %F{036}${nvm_prompt}%f"
   fi
 }
 
@@ -40,13 +65,15 @@ function prompt_chriscanal_setup {
 
   autoload -Uz add-zsh-hook
   add-zsh-hook precmd get-vcs-info
+  add-zsh-hook precmd get-nvm-info
   add-zsh-hook chpwd list-files
   add-zsh-hook chpwd get-vcs-info
+  add-zsh-hook chpwd get-nvm-info
 
   # zstyle ':omz:module:editor' completing '%B%F{red}...%f%b'
 
   # Time: %F{yellow}%T
-  PROMPT='%F{magenta}${SSH_TTY:+%n@%m }%F{cyan}%1~%f${vcs_info}\
+  PROMPT='%F{yellow}%T${nvm_info} %F{magenta}${SSH_TTY:+%n@%m }%F{cyan}%1~%f${vcs_info}\
 %(!.%B%F{red}#%f%b.%B %(?.%F{green}.%F{red})❯%f%b) '
   RPROMPT=''
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
