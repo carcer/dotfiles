@@ -81,6 +81,7 @@ alias gs='git status --short'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gdisc='git discard'
+alias cia='git commit -am'
 
 function gcm() {
   args=$@
