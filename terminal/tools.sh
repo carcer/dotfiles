@@ -118,15 +118,12 @@ alias bws='brunch watch --server'
 alias nr='npm run'
 
 # Package managers.
-alias bi='bower install'
-alias bis='bower install --save'
 alias ni='npm install'
 alias nis='npm install --save'
 alias nibi='npm install && bower install'
-alias nibir='rm -rf {bower_components,node_modules} && npm install && bower install'
+alias niclr='rm -rf node_modules && npm install'
 alias ns='npm search'
 
-alias jk='jekyll serve --watch' # lol jk
 # alias serve='python -m SimpleHTTPServer'
 alias serve='http-server' # npm install http-server
 alias server='http-server'
@@ -390,8 +387,3 @@ function preview() {
   [[ -z "$item" ]] && item='.'
   open $1 -a 'Preview'
 }
-
-export NVM_DIR="/Users/chriscanal/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-nvm use stable

@@ -85,3 +85,6 @@ source $ZSH/oh-my-zsh.sh
 #!/usr/bin/env zsh
 # Path to your oh-my-zsh installation.
 #export ZSH=/Users/chriscanal/.oh-my-zsh
+
+export NVM_DIR="/Users/chriscanal/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

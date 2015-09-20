@@ -110,4 +110,13 @@ fi
 BROWSER=''
 unset BROWSER
 
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
 export NODE_PATH='/usr/local/lib/node_modules'
+
+export NVM_DIR="/Users/chriscanal/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+nvm use stable
+
+export EDITOR='subl -w'

@@ -33,7 +33,7 @@ if [[ `uname` == 'Darwin' ]]; then
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       brew update
       brew install htop nginx jsawk trash
-      brew install watchman
+      brew install --HEAD watchman
   fi
 
   echo 'Tweaking OS X...'
@@ -48,7 +48,7 @@ fi
 
 echo 'Installing nvm...'
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash
-  nvm install stable
+  #nvm install stable
   npm install -g semver
 
 echo 'Applying sublime config...'
@@ -56,6 +56,7 @@ echo 'Applying sublime config...'
   as="$HOME/Library/Application Support/Sublime Text 3/Packages"
   asprefs="$as/User/Preferences.sublime-settings"
   if [[ -d "${as}" ]]; then
+
     for theme in "$st/Theme*"; do
       cp -r $theme "${as}"
     done
@@ -64,11 +65,8 @@ echo 'Applying sublime config...'
     echo "Install Sublime Text http://www.sublimetext.com"
   fi
 
-echo 'Symlinking config files...'
-  source 'dotfiles/symlink-dotfiles.sh'
-
 echo 'burl...'
-  cd terminal/burl
+  cd $(pwd)/dotfiles/terminal/burl
   make
   cd ..
 
@@ -99,5 +97,7 @@ echo 'Should I give you links for system applications (e.g. Skype, Tower, VLC)?'
 echo 'n / y'
 read give_links
 [[ "$give_links" == 'y' ]] && open_apps
+
+echo 'Remember to run symlink-dotfiles.sh'
 
 popd
