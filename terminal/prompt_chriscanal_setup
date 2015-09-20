@@ -29,18 +29,9 @@ function get-vcs-info {
   if [[ -z "$ref" ]]; then
     vcs_info=''
   else
-    st=`git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo ' ✘'`
-    vcs_info=" %F{blue}%F{magenta}${ref}%F{red}${st}%f"
+    st=`git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo ' %F{red}✘' || echo ' %F{green}✔'`
+    vcs_info=" %F{blue}%F{magenta}${ref}${st}%f"
   fi
-}
-
-function nvm_prompt_info() {
-  [ -f "$HOME/.nvm/nvm.sh" ] || return
-  local nvm_prompt
-  nvm_prompt=$(node -v 2>/dev/null)
-  [[ "${nvm_prompt}x" == "x" ]] && return
-  nvm_prompt=${nvm_prompt:1}
-  echo "${ZSH_THEME_NVM_PROMPT_PREFIX}${nvm_prompt}${ZSH_THEME_NVM_PROMPT_SUFFIX}"
 }
 
 function get-nvm-info {
@@ -54,7 +45,25 @@ function get-nvm-info {
     nvm_prompt=$(node -v 2>/dev/null)
     [[ "${nvm_prompt}x" == "x" ]] && return
     nvm_prompt=${nvm_prompt:1}
-    nvm_info=" %F{036}${nvm_prompt}%f"
+
+    local ver engine
+    engine=$(cat package.json | jsawk 'return this.engines && this.engines["node"]')
+
+    local nvm_color='036'
+
+    if [ ! -z $engine ]; then
+      ver=`semver ${nvm_prompt} -r ${engine}`
+    else
+      ver='yup'
+      nvm_color='130'
+    fi
+
+    if [[ -z "$ver" ]]; then
+      nvm_color='red'
+    fi
+
+    nvm_info=" %F{${nvm_color}}%B⬡%b %F{${nvm_color}}${nvm_prompt}%f"
+
   fi
 }
 

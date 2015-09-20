@@ -32,7 +32,7 @@ if [[ `uname` == 'Darwin' ]]; then
     echo 'Installing Homebrew...'
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       brew update
-      brew install htop nginx trash
+      brew install htop nginx jsawk trash
   fi
 
   echo 'Tweaking OS X...'
@@ -48,6 +48,7 @@ fi
 echo 'Installing nvm...'
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash
   nvm install stable
+  npm install -g semver
 
 echo 'Applying sublime config...'
   st=$(pwd)/dotfiles/sublime/packages
