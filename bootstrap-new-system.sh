@@ -67,6 +67,11 @@ echo 'Applying sublime config...'
 echo 'Symlinking config files...'
   source 'dotfiles/symlink-dotfiles.sh'
 
+echo 'burl...'
+  cd terminal/burl
+  make
+  cd ..
+
 open_apps() {
   echo 'Install apps:'
   echo 'Firefox:'
