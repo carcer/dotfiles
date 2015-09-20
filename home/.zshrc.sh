@@ -1,14 +1,16 @@
 #!/usr/bin/env zsh
+# Path to your oh-my-zsh installation.
+#export ZSH=/Users/chriscanal/.oh-my-zsh
 
 curr="$pm/dotfiles"
 
 # Load main files.
-# echo "Load start\t" $(gdate "+%s-%N")
+echo "Load start\t"
 source "$curr/terminal/startup.sh"
-# echo "$curr/terminal/startup.sh"
+echo "$curr/terminal/startup.sh"
 source "$curr/terminal/completion.sh"
 source "$curr/terminal/highlight.sh"
-# echo "Load end\t" $(gdate "+%s-%N")
+echo "Load end\t"
 
 autoload -U colors && colors
 
@@ -42,7 +44,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   alias p='pbpaste'
 
   # Remove all items safely, to Trash (`brew install trash`).
-  alias rm='trash'
+#  alias rm='trash'
 
   # Case-insensitive pgrep that outputs full path.
   alias pgrep='pgrep -fli'
@@ -387,3 +389,6 @@ function preview() {
   [[ -z "$item" ]] && item='.'
   open $1 -a 'Preview'
 }
+
+export NVM_DIR="/Users/chriscanal/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

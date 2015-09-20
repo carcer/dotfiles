@@ -7,14 +7,15 @@ pushd .
 mkdir -p $dev
 cd $dev
 
-echo 'Enter new hostname of the machine (e.g. macbook-chriscanal)'
-  read hostname
-  echo "Setting new hostname to $hostname..."
-  scutil --set HostName "$hostname"
-  compname=$(sudo scutil --get HostName | tr '-' '.')
-  echo "Setting computer name to $compname"
-  scutil --set ComputerName "$compname"
-  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$compname"
+# echo 'Enter new hostname of the machine (e.g. macbook-chriscanal)'
+#  read hostname
+#  echo "Setting new hostname to $hostname..."
+#  scutil --set HostName "$hostname"
+#  compname=$(sudo scutil --get HostName | tr '-' '.')
+#  echo "Setting computer name to $compname"
+#  scutil --set ComputerName "$compname"
+#  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$compname"
+
 
 pub=$HOME/.ssh/id_rsa.pub
 echo 'Checking for SSH key, generating one if it does not exist...'
@@ -31,11 +32,11 @@ if [[ `uname` == 'Darwin' ]]; then
     echo 'Installing Homebrew...'
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       brew update
-      brew install htop nginx
+      brew install htop nginx trash
   fi
 
   echo 'Tweaking OS X...'
-    source './etc/osx.sh'
+    #source 'dotfiles/etc/osx.sh'
 
   # http://github.com/sindresorhus/quick-look-plugins
   echo 'Installing Quick Look plugins...'
@@ -48,22 +49,21 @@ echo 'Installing nvm...'
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash
   nvm install stable
 
-echo 'Symlinking config files...'
-  source 'symlink-dotfiles.sh'
-
 echo 'Applying sublime config...'
-  st=$(pwd)/sublime/packages
+  st=$(pwd)/dotfiles/sublime/packages
   as="$HOME/Library/Application Support/Sublime Text 3/Packages"
   asprefs="$as/User/Preferences.sublime-settings"
-  if [[ -d "$as" ]]; then
-    for theme in $st/Theme*; do
-      cp -r $theme $as
+  if [[ -d "${as}" ]]; then
+    for theme in "$st/Theme*"; do
+      cp -r $theme "${as}"
     done
-    rm $asprefs
-    cp -r $st/pm-themes $as
+    cp -r "$st/pm-themes" "${as}"
   else
     echo "Install Sublime Text http://www.sublimetext.com"
   fi
+
+echo 'Symlinking config files...'
+  source 'dotfiles/symlink-dotfiles.sh'
 
 open_apps() {
   echo 'Install apps:'
