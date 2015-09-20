@@ -28,7 +28,7 @@ function get-vcs-info {
   if [[ -z "$ref" ]]; then
     vcs_info=''
   else
-    st=`git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo ' %F{magenta}!✘'`
+    st=`git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo ' ✘'`
     vcs_info=" %F{blue}%F{magenta}${ref}${st}%f"
   fi
 }
