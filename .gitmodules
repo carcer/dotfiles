@@ -13,3 +13,6 @@
 [submodule "terminal/burl"]
 	path = terminal/burl
 	url = https://github.com/tj/burl.git
+[submodule "terminal/suggest"]
+	path = terminal/suggest
+	url = https://github.com/tarruda/zsh-autosuggestions.git

@@ -7,9 +7,9 @@ curr="$pm/dotfiles"
 # Load main files.
 #echo "Load start\t"
 source "$curr/terminal/startup.sh"
-#echo "$curr/terminal/startup.sh"
 source "$curr/terminal/completion.sh"
 source "$curr/terminal/highlight.sh"
+source "$curr/terminal/suggest.sh"
 #echo "Load end\t"
 
 autoload -U colors && colors
@@ -131,6 +131,10 @@ alias ns='npm search'
 # alias serve='python -m SimpleHTTPServer'
 alias serve='http-server' # npm install http-server
 alias server='http-server'
+
+alias aemu='android avd;'
+
+alias rna='react-native run-android'
 
 # Ruby.
 alias bx='bundle exec'
