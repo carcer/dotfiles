@@ -32,7 +32,7 @@ alias cl='clear'
 alias wget='wget --no-check-certificate'
 
 # JSHint short-cut.
-alias lint=jshint
+alias lint=eslint
 
 # Faster NPM for europeans.
 alias npme='npm --registry http://registry.npmjs.eu'
@@ -92,6 +92,12 @@ function gcam() {
   git commit --amend -m "$args"
 }
 
+function gfea() {
+  args=$@
+  msg="$(git rev-parse --abbrev-ref HEAD | cut -f2 -d/): ${args}"
+  git commit -m "$msg"
+}
+
 alias gp='git push'
 
 function gcp() {
@@ -118,6 +124,11 @@ alias bws='brunch watch --server'
 alias nr='npm run'
 
 # Package managers.
+alias nvmu='nvm use'
+function nvmif() {
+  args=$@
+  nvm install $args && nvm reinstall-packages stable
+}
 alias ni='npm install'
 alias nis='npm install --save'
 alias nibi='npm install && bower install'

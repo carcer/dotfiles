@@ -90,8 +90,6 @@ if [[ -s $(brew --prefix nvm)/nvm.sh ]]; then
   source $(brew --prefix nvm)/nvm.sh
 fi
 
-echo "Using node $(node -v) (npm $(npm -v))"
-
 # Set the list of directories that Zsh searches for programs.
 # export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 path=(

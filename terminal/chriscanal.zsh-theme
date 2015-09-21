@@ -118,7 +118,7 @@ function my_nvm_prompt_info() {
   local nvm_color='036'
 
   if [ ! -z $engine ]; then
-    ver=`semver ${nvm_prompt} -r ${engine}`
+    ver=`semver ${nvm_prompt} -l -r ${engine}`
   else
     ver='yup'
     nvm_color='130'
@@ -126,6 +126,7 @@ function my_nvm_prompt_info() {
 
   if [[ -z "$ver" ]]; then
     nvm_color='red'
+    nvm_prompt="${nvm_prompt} (${engine})"
   fi
 
   echo " %F{${nvm_color}}${ZSH_THEME_NVM_PROMPT_PREFIX}%F{${nvm_color}}${nvm_prompt}%F{${nvm_color}}${ZSH_THEME_NVM_PROMPT_SUFFIX}%f"
