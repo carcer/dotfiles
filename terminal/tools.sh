@@ -114,13 +114,6 @@ alias gl='git log --no-merges'
 
 
 # Dev short-cuts.
-
-# Brunch.
-alias bb='brunch build'
-alias bbp='brunch build --production'
-alias bw='brunch watch'
-alias bws='brunch watch --server'
-
 alias nr='npm run'
 
 # Package managers.
