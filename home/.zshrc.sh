@@ -7,6 +7,9 @@ export ZSH=/Users/chriscanal/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="chriscanal"
 
+if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zshenv" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zshenv"
+fi
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -85,6 +88,3 @@ source $ZSH/oh-my-zsh.sh
 #!/usr/bin/env zsh
 # Path to your oh-my-zsh installation.
 #export ZSH=/Users/chriscanal/.oh-my-zsh
-
-export NVM_DIR="/Users/chriscanal/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

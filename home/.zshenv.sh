@@ -81,6 +81,17 @@ for path_file in /etc/manpaths.d/*(.N); do
 done
 unset path_file
 
+
+# nvm
+export NODE_PATH='/usr/local/lib/node_modules'
+
+export NVM_DIR="$HOME/.nvm"
+if [[ -s $(brew --prefix nvm)/nvm.sh ]]; then
+  source $(brew --prefix nvm)/nvm.sh
+fi
+
+echo "Using node $(node -v) (npm $(npm -v))"
+
 # Set the list of directories that Zsh searches for programs.
 # export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 path=(
@@ -111,12 +122,3 @@ BROWSER=''
 unset BROWSER
 
 export ANDROID_HOME=/usr/local/opt/android-sdk
-
-export NODE_PATH='/usr/local/lib/node_modules'
-
-export NVM_DIR="/Users/chriscanal/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-nvm use stable
-
-export EDITOR='subl -w'

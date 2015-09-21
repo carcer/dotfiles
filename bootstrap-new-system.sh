@@ -56,7 +56,7 @@ echo 'Applying sublime config...'
   as="$HOME/Library/Application Support/Sublime Text 3/Packages"
   asprefs="$as/User/Preferences.sublime-settings"
   if [[ -d "${as}" ]]; then
-
+    ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
     for theme in "$st/Theme*"; do
       cp -r $theme "${as}"
     done
