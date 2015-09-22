@@ -69,8 +69,16 @@
   pushInsteadOf = "gist:"
   pushInsteadOf = "git://gist.github.com/"
 
-[mergetool]
-	keepBackup = false
+[diff]
+    tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[merge]
+    tool = Kaleidoscope
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+
 [init]
 	templatedir = ~/.git_template
 [ghi]

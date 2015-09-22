@@ -77,6 +77,8 @@ alias gup='git pull && git push'
 alias ghu='git pull hy'
 alias ghp='git push hy'
 
+alias gflf='git flow feature'
+
 alias gs='git status --short'
 alias gd='git diff'
 alias gds='git diff --staged'
@@ -125,7 +127,7 @@ function nvmif() {
 alias ni='npm install'
 alias nis='npm install --save'
 alias nibi='npm install && bower install'
-alias niclr='rm -rf node_modules && npm install'
+alias niclr='echo "Clearing node modules..." && rm -rf node_modules && echo "Installing npm packages..." && npm install'
 alias ns='npm search'
 
 # alias serve='python -m SimpleHTTPServer'
@@ -148,7 +150,7 @@ alias nglog='tail -f /usr/local/var/log/nginx/access.log'
 alias ngerr='tail -f /usr/local/var/log/nginx/error.log'
 
 # Checks whether connection is up.
-alias net="ping ya.ru | grep -E --only-match --color=never '[0-9\.]+ ms'"
+alias net="ping bbc.co.uk | grep -E --only-match --color=never '[0-9\.]+ ms'"
 
 # Pretty print json
 alias json='python -m json.tool'

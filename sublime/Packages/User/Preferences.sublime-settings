@@ -7,7 +7,8 @@
 	"file_exclude_patterns":
 	[
 		".DS_Store",
-		"*.map"
+		"*.map",
+		"*.orig"
 	],
 	"fold_buttons": true,
 	"folder_exclude_patterns":
@@ -15,10 +16,11 @@
 		".git",
 		"log",
 		"tmp",
-		"node_modules"
+		"node_modules",
+		"compiled"
 	],
 	"font_face": "Source Code Pro",
-	"font_size": 17,
+	"font_size": 18,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
