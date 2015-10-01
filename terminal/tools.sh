@@ -112,8 +112,15 @@ alias gbr='git branch'
 alias gbrcl='git checkout --orphan'
 alias gbrd='git branch -D'
 alias gl='git log --no-merges'
-# own git workflow in hy origin with Tower
 
+# Docker
+function bdmachine() {
+  docker-machine start default
+  docker-machine env default
+  eval "$(docker-machine env default)"
+}
+
+alias dm='docker-machine'
 
 # Dev short-cuts.
 alias nr='npm run'
@@ -134,6 +141,7 @@ alias ns='npm search'
 alias serve='http-server' # npm install http-server
 alias server='http-server'
 
+# React Native
 alias aemu='android avd;'
 
 alias rna='react-native run-android'

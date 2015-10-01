@@ -115,6 +115,7 @@ if [[ -d "$TMPDIR" ]]; then
   fi
 fi
 
+ulimit -n 1024
 
 BROWSER=''
 unset BROWSER
