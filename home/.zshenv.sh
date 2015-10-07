@@ -82,14 +82,6 @@ done
 unset path_file
 
 
-# nvm
-export NODE_PATH='/usr/local/lib/node_modules'
-
-export NVM_DIR="$HOME/.nvm"
-if [[ -s $(brew --prefix nvm)/nvm.sh ]]; then
-  source $(brew --prefix nvm)/nvm.sh
-fi
-
 # Set the list of directories that Zsh searches for programs.
 # export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 path=(
@@ -121,3 +113,4 @@ BROWSER=''
 unset BROWSER
 
 export ANDROID_HOME=/usr/local/opt/android-sdk
+

@@ -61,6 +61,14 @@ export PATH="/usr/local/heroku/bin:/Users/chriscanal/.nvm/versions/node/v4.1.0/b
 
 source $ZSH/oh-my-zsh.sh
 
+# nvm
+export NODE_PATH='/usr/local/lib/node_modules'
+
+export NVM_DIR="$HOME/.nvm"
+if [[ -s $(brew --prefix nvm)/nvm.sh ]]; then
+  source $(brew --prefix nvm)/nvm.sh
+fi
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
