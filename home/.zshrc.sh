@@ -56,7 +56,6 @@ plugins=(git docker)
 
 # User configuration
 
-export PATH="/usr/local/heroku/bin:/Users/chriscanal/.nvm/versions/node/v4.1.0/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/ruby/bin:/usr/local/lib/python2.7/site-packages:/usr/local/share/npm/bin:/usr/bin:/usr/sbin:/bin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -66,7 +65,7 @@ export NODE_PATH='/usr/local/lib/node_modules'
 
 export NVM_DIR="$HOME/.nvm"
 if [[ -s $(brew --prefix nvm)/nvm.sh ]]; then
-  source $(brew --prefix nvm)/nvm.sh
+  source $(brew --prefix nvm)/nvm.sh stable
 fi
 
 # You may need to manually set your language environment

@@ -79,7 +79,5 @@
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
   trustExitCode = true
 
-[init]
-	templatedir = ~/.git_template
 [ghi]
 	token = !security find-internet-password -a carcer -s github.com -l 'ghi token' -w

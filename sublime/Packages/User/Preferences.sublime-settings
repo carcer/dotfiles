@@ -17,7 +17,8 @@
 		"log",
 		"tmp",
 		"node_modules",
-		"compiled"
+		"compiled",
+		"build"
 	],
 	"font_face": "Source Code Pro",
 	"font_size": 18,

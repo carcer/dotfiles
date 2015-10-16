@@ -81,7 +81,6 @@ for path_file in /etc/manpaths.d/*(.N); do
 done
 unset path_file
 
-
 # Set the list of directories that Zsh searches for programs.
 # export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 path=(
