@@ -86,6 +86,8 @@ Bundle 'isRuslan/vim-es6'
 
 Bundle 'bronson/vim-trailing-whitespace'
 
+Bundle 'altercation/vim-colors-solarized'
+
 " key combos for 'pairs' of things. Mostly previous/next type stuff
 Bundle 'tpope/vim-unimpaired'
 Bundle 'wojtekmach/vim-rename'
@@ -97,8 +99,9 @@ syntax on
 imap <C-c> <esc>
 
 try
-    syntax enable
-	colorscheme monokai
+	let g:solarized_termcolors=256
+	set background=dark
+	colorscheme solarized
 catch
 endtry
 
