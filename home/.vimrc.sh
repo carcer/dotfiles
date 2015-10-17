@@ -84,13 +84,14 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'isRuslan/vim-es6'
 
+Bundle 'bronson/vim-trailing-whitespace'
+
 " key combos for 'pairs' of things. Mostly previous/next type stuff
 Bundle 'tpope/vim-unimpaired'
 Bundle 'wojtekmach/vim-rename'
 " so ~/sources/tern/vim/tern.vim
 syntax on
 
-Plugin 'while1eq1/vim-monokai-black'
 
 " MBA tiny escape button fix
 imap <C-c> <esc>
