@@ -31,6 +31,9 @@ Bundle 'https://github.com/plasticboy/vim-markdown.git'
 " full path fuzzy search
 Bundle 'kien/ctrlp.vim'
 
+" JS
+Bundle 'jelera/vim-javascript-syntax'
+
 " some yaml support
 Bundle 'https://github.com/avakhov/vim-yaml.git'
 
