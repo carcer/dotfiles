@@ -79,6 +79,11 @@ Bundle 'https://github.com/scrooloose/syntastic.git'
 " creates a nice way to traverse buffers in a 'tab like' way.
 " Bundle 'fholgado/minibufexpl.vim'
 
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'isRuslan/vim-es6'
+
 " key combos for 'pairs' of things. Mostly previous/next type stuff
 Bundle 'tpope/vim-unimpaired'
 Bundle 'wojtekmach/vim-rename'
