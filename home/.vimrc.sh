@@ -248,8 +248,9 @@ set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=*.gem
 set wildignore+=log/**
+set wildignore+=build/**
+set wildignore+=compiled/**
 set wildignore+=tmp/**
-set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*node_modules*
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
