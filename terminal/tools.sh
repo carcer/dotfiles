@@ -120,6 +120,10 @@ function bdmachine() {
   eval "$(docker-machine env default)"
 }
 
+function doShit() {
+	echo $@
+}
+
 alias dm='docker-machine'
 
 # Dev short-cuts.
@@ -146,6 +150,12 @@ alias aemu='android avd;'
 
 alias rna='react-native run-android'
 
+# Detect which `ls` flavor is in use
+ if ls --color > /dev/null 2>&1; then # GNU `ls`
+	colorflag="--color"
+	else # OS X `ls`
+		colorflag="-G"
+		fi
 # Ruby.
 alias bx='bundle exec'
 alias bex='bundle exec'

@@ -1,5 +1,4 @@
 set nocompatible
-set background=dark
 filetype on
 filetype plugin on
 filetype indent on
@@ -45,9 +44,6 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " zen coding (for HTML)
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
-" colors
-Bundle 'flazz/vim-colorschemes'
-
 " jump around documents
 Bundle 'Lokaltog/vim-easymotion'
 
@@ -71,7 +67,9 @@ Bundle "pangloss/vim-javascript"
 " more js syntax options
 Bundle 'maksimr/vim-jsbeautify'
 
- Bundle 'einars/js-beautify'
+Bundle 'einars/js-beautify'
+
+Bundle 'mxw/vim-jsx'
 
 " pretty sweet linting/error checking. Works on save
 Bundle 'https://github.com/scrooloose/syntastic.git'
@@ -92,6 +90,9 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'wojtekmach/vim-rename'
 " so ~/sources/tern/vim/tern.vim
+
+Bundle 'nathanaelkane/vim-indent-guides'
+
 syntax on
 
 
@@ -100,12 +101,13 @@ imap <C-c> <esc>
 
 try
 	let g:solarized_termcolors=256
-	set background=dark
+	set background=light
 	colorscheme solarized
 catch
 endtry
 
 filetype plugin indent on
+let g:jsx_ext_required = 0
 
 set tabstop=4
 set softtabstop=4
@@ -172,7 +174,6 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set matchtime=2
 
-
 set laststatus=2
 
 " Starting from vim 7.3 undo can be persisted across sessions
@@ -195,10 +196,10 @@ map 0 ^
 
 " Automatically re-indent on paste
 " http://www.reddit.com/r/vim/comments/pkwkm/awesome_little_tweak_automatically_reindent_on/
-"nnoremap <leader>p p
-"nnoremap <leader>P P
-"nnoremap p p'[v']=
-"nnoremap P P'[v']=
+nnoremap <leader>p p
+nnoremap <leader>P P
+nnoremap p p'[v']=
+nnoremap P P'[v']=
 
 " Leave insert-mode after 15 seconds of no input.
 " http://www.reddit.com/r/vim/comments/kz84u/what_are_some_simple_yet_mindblowing_tweaks_to/c2ol6wd
@@ -251,11 +252,18 @@ set wildignore+=log/**
 set wildignore+=build/**
 set wildignore+=compiled/**
 set wildignore+=tmp/**
-set wildignore+=*node_modules*
+set wildignore+=*node_modules/**
+set wildignore+=*compiled/**
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
+set eol
+set shortmess=atI
+set showmode
+set title
+set showcmd
+set guifont=Source\ Code\ Pro
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>

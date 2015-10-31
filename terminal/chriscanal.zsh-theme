@@ -127,6 +127,8 @@ function my_nvm_prompt_info() {
   if [[ -z "$ver" ]]; then
     nvm_color='red'
     nvm_prompt="${nvm_prompt} (${engine})"
+  else
+	  nvm_prompt=""
   fi
 
   echo " %F{${nvm_color}}${ZSH_THEME_NVM_PROMPT_PREFIX}%F{${nvm_color}}${nvm_prompt}%F{${nvm_color}}${ZSH_THEME_NVM_PROMPT_SUFFIX}%f"
@@ -137,7 +139,8 @@ source "$curr/terminal/tools.sh"
 
 setopt prompt_subst
 PROMPT='%F{yellow}%T$(my_nvm_prompt_info) %F{magenta}${SSH_TTY:+%n@%m }%F{cyan}%1~%f$(bureau_git_prompt)\
-%(!.%B%F{red}#%f%b.%B %(?.%F{green}.%F{red})❯%f%b) '
+%(!.%B%F{red}#%f%b.%B 
+%(?.%F{green}.%F{red})❯%f%b) '
 RPROMPT=''
 
 autoload -U add-zsh-hook
