@@ -16,3 +16,6 @@
 [submodule "terminal/suggest"]
 	path = terminal/suggest
 	url = https://github.com/tarruda/zsh-autosuggestions.git
+[submodule "ides/intellij/themes"]
+	path = ides/intellij/themes
+	url = https://github.com/jkaving/intellij-colors-solarized.git
