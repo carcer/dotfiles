@@ -129,6 +129,8 @@ alias dm='docker-machine'
 # Dev short-cuts.
 alias nr='npm run'
 
+alias tags='ctags -R -f ./.git/tags .'
+
 # Package managers.
 alias nvmu='nvm use'
 function nvmif() {
