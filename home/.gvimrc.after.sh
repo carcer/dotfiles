@@ -1,5 +1,5 @@
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 set guifont=Source\ Code\ Pro:h14
 let g:syntastic_javascript_checkers = ['eslint']

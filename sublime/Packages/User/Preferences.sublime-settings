@@ -1,7 +1,7 @@
 {
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Seti_UI/Scheme/Seti_monokai.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"draw_indent_guides": true,
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
@@ -35,7 +35,7 @@
 	"save_on_focus_lost": false,
 	"side_bar_width": 220,
 	"tab_size": 4,
-	"theme": "Seti.sublime-theme",
+	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": false

@@ -60,6 +60,8 @@ plugins=(git docker)
 
 source $ZSH/oh-my-zsh.sh
 
+ulimit -n 1024
+
 # nvm
 export NODE_PATH='/usr/local/lib/node_modules'
 
