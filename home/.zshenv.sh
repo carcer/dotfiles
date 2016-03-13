@@ -10,7 +10,7 @@ fi
 
 # Editors.
 # --------
-export EDITOR='/usr/local/bin/subl'
+export EDITOR='vim'
 export VISUAL='/usr/local/bin/subl'
 export PAGER='less'
 
