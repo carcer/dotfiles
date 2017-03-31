@@ -19,6 +19,10 @@ fpath=("$curr/terminal" $fpath)
 autoload -Uz promptinit && promptinit
 prompt 'chriscanal'
 
+export MOBILE_NO=07714017128
+export TEST_ENVIRONMENT=local
+export WEB_AUTO=/Users/chriscanal/Development/projects/NAG/test-team-tools/automation/selenium/ft4/scripts
+
 # ==================================================================
 # = Aliases =
 # ==================================================================
@@ -84,6 +88,7 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias gdisc='git discard'
 alias cia='git commit -am'
+alias gsub='git submodule update'
 
 function gcm() {
   args=$@
@@ -120,14 +125,11 @@ function bdmachine() {
   eval "$(docker-machine env default)"
 }
 
-function doShit() {
-	echo $@
-}
-
 alias dm='docker-machine'
 
 # Dev short-cuts.
 alias nr='npm run'
+alias j='jest'
 
 alias tags='ctags -R -f ./.git/tags .'
 
